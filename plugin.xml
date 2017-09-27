@@ -16,7 +16,9 @@
   </js-module>
 
   <platform name="android">
-
+ <framework src="in.netcore.smartechgcm:smartech-gcm:2.2.0" />
+  <framework src="com.google.code.gson:gson:2.8.0" />
+<framework src="com.google.android.gms:play-services:9.6.0" />
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Smartech">
         <param name="android-package" value="com.netcore.plugin.Smartech"/>
