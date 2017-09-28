@@ -1,4 +1,4 @@
-# Smartech Android Cordova Plugin For FCM
+# Smartech Android Cordova Plugin For GCM
 
 Smartech plugin for Activity tracking in cordova Android Application.
 
@@ -17,11 +17,11 @@ Install Android platform
     
 Integrate Smartech SDK in created Cordova Project by following below github link
 
-    https://github.com/NetcoreSolutions/Smartech-Android-FCM-SDK
+    https://github.com/NetcoreSolutions/Smartech-Android-GCM-SDK
 
 Install the plugin
 
-    $ cordova plugin add https://github.com/NetcoreSolutions/Smartech-Cordova-Android-FCM-Plugin.git
+    $ cordova plugin add https://github.com/smartPradeep/GCMCordovaPlugin.git
 
 Edit `www/js/index.js` and add the following code inside `onDeviceReady` function
 
@@ -30,6 +30,7 @@ Edit `www/js/index.js` and add the following code inside `onDeviceReady` functio
 	data["eventId"] = "25";            // To get token from FCM
 	data["identity"] = "<Login identity>";    // provide “” or primary key defined on smartech panel
 	data["applicationId"] = "<ApplicationId>";    // provide AppId which you get from Smartech panel
+	data["senderId"] = "<SenderId>";    // provide senderId which you get from google console
 	smartech.track(data);
 ```
 
