@@ -2,7 +2,7 @@ package com.netcore.plugin;
 
 import android.content.Context;
 
-import in.netcore.lib.NetcoreSDK;
+import in.netcore.smartechgcm.NetcoreSDK;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -12,6 +12,7 @@ import org.json.JSONObject;
 public class Smartech extends CordovaPlugin {
    String identity = "";
    JSONObject newPayload, profileDetail;
+   String senderId = "";
 
    @Override
    public boolean execute(String action, JSONArray data, final CallbackContext callbackContext) throws JSONException {
@@ -38,8 +39,11 @@ public class Smartech extends CordovaPlugin {
                 break;
             case 25 :
                if(newData.has("applicationId")){
+                  if(newData.has("senderId")){
+                     senderId = newData.getString("senderId");
+                  }
                   String applicationId = newData.getString("applicationId");
-                  NetcoreSDK.register(cordova.getActivity().getApplication(), applicationId, identity);
+                  NetcoreSDK.register(cordova.getActivity().getApplication(), applicationId, senderId, identity);
                }
                break;
             default:
