@@ -23,7 +23,7 @@ public class Smartech extends CordovaPlugin {
          if(newData.has("identity")){
             identity = newData.getString("identity");
          }
-
+         NetcoreSDK.setCurrentActivity1(cordova.getActivity());
          switch(eventId) {
              case 0 :
                 if(newData.has("profile")){
