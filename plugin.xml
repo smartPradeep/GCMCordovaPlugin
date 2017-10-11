@@ -28,6 +28,9 @@
     </config-file>
 
     <source-file src="src/android/Smartech.java" target-dir="src/com/netcore/plugin/"/>
+    <hook type="before_compile" src="updateMultidexManifest.js" />
+    <hook type="after_platform_add" src="updateMultidexManifest.js" />
+    <framework src="build.gradle" custom="true" type="gradleReference" />
   </platform>
 
   <platform name="ios">
