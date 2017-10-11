@@ -16,9 +16,6 @@
   </js-module>
 
   <platform name="android">
-    <hook type="before_compile" src="updateMultidexManifest.js" />
-    <hook type="after_platform_add" src="updateMultidexManifest.js" />
-    <framework src="build.gradle" custom="true" type="gradleReference" />
 
     <framework src="in.netcore.smartechgcm:smartech-gcm:2.2.2" />
     <framework src="com.google.code.gson:gson:2.8.0" />
